@@ -1,4 +1,4 @@
-FROM lambci/lambda:nodejs6.10
+FROM lambci/lambda:nodejs8.10
 USER root
 
 RUN yum install -y make openssl ca-certificates wget
@@ -10,6 +10,8 @@ WORKDIR /src
 
 RUN npm config set registry http://registry.npmjs.org/ && \
     npm config set strict-ssl false
+
+RUN npm install --global yarn
 
 ENTRYPOINT []
 CMD exit
