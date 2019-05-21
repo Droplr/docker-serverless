@@ -10,7 +10,8 @@ RUN wget https://github.com/Droplr/aws-env/raw/v0.1/bin/aws-env-linux-amd64 -O /
 WORKDIR /src
 
 RUN npm config set registry http://registry.npmjs.org/ && \
-    npm config set strict-ssl false
+    npm config set strict-ssl false && \
+    npm i -g npm@^6.9.0 serverless@^1.30.0
 
 ENTRYPOINT []
 CMD exit
