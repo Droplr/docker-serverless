@@ -1,7 +1,8 @@
 FROM lambci/lambda:nodejs10.x
 USER root
 
-RUN yum install -y make openssl ca-certificates wget
+RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
+RUN yum install -y make openssl ca-certificates wget yarn
 
 RUN wget https://github.com/Droplr/aws-env/raw/v0.1/bin/aws-env-linux-amd64 -O /bin/aws-env && \
   chmod +x /bin/aws-env
