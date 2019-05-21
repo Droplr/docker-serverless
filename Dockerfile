@@ -11,7 +11,7 @@ WORKDIR /src
 
 RUN npm config set registry http://registry.npmjs.org/ && \
     npm config set strict-ssl false && \
-    npm i -g npm@^6.7.0 serverless@^1.30.0
+    npm i -g npm@^6.9.0 serverless@^1.30.0
 
 ENTRYPOINT []
 CMD exit
